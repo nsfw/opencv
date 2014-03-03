@@ -642,13 +642,15 @@ static int icvOpenCamera_QT (CvCapture_QT_Cam * capture, const int index)
 
 
     // travers all components and count video digitizer channels
-    component_description.componentType         = videoDigitizerComponentType;
-    component_description.componentSubType      = 0L;
-    component_description.componentManufacturer = 0L;
-    component_description.componentFlags        = 0L;
-    component_description.componentFlagsMask    = 0L;
     do
     {
+        // Clear component_description
+        component_description.componentType         = videoDigitizerComponentType;
+        component_description.componentSubType      = 0L;
+        component_description.componentManufacturer = 0L;
+        component_description.componentFlags        = 0L;
+        component_description.componentFlagsMask    = 0L;
+
         // traverse component list
         component = FindNextComponent (component, & component_description);
 
